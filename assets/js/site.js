@@ -78,9 +78,11 @@
     }
   }
 
-  // Each screenshot opens at full size in a new tab.
+  // Screenshots open in a <dialog> viewer; the link still works for new-tab clicks and without JS.
   function linkScreenshots() {
     var images = document.querySelectorAll('.shot img');
+    if (!images.length) return;
+    var viewer = createViewer();
     for (var i = 0; i < images.length; i++) {
       var link = document.createElement('a');
       link.href = images[i].getAttribute('src');
@@ -88,6 +90,52 @@
       link.rel = 'noopener';
       images[i].parentNode.insertBefore(link, images[i]);
       link.appendChild(images[i]);
+      link.addEventListener('click', function (e) {
+        if (!viewer || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        var img = this.querySelector('img');
+        var caption = this.closest('.shot').querySelector('figcaption');
+        // innerText skips the hidden-language span.
+        viewer.open(img.getAttribute('src'), img.alt, caption ? caption.innerText.trim() : '');
+      });
+    }
+  }
+
+  function createViewer() {
+    var dialog = document.createElement('dialog');
+    if (typeof dialog.showModal !== 'function') return null;
+    dialog.className = 'lightbox';
+    dialog.innerHTML = '<button type="button" class="lightbox__close" aria-label="Close">×</button><img alt=""><p></p>';
+    document.body.appendChild(dialog);
+    var img = dialog.querySelector('img');
+    var text = dialog.querySelector('p');
+    dialog.querySelector('.lightbox__close').addEventListener('click', function () { dialog.close(); });
+    // A click on the backdrop lands on the dialog element itself.
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    return {
+      open: function (src, alt, caption) {
+        img.src = src;
+        img.alt = alt;
+        text.textContent = caption;
+        dialog.showModal();
+      }
+    };
+  }
+
+  // A large play button over each demo video, hidden once playback starts.
+  function addPlayButtons() {
+    var videos = document.querySelectorAll('.video video');
+    for (var i = 0; i < videos.length; i++) {
+      (function (video) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'video__play';
+        button.setAttribute('aria-label', 'Play');
+        button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.8v14.4L19 12z" fill="currentColor"/></svg>';
+        button.addEventListener('click', function () { video.play(); });
+        video.addEventListener('play', function () { button.hidden = true; });
+        video.parentNode.appendChild(button);
+      })(videos[i]);
     }
   }
 
@@ -121,6 +169,7 @@
     mountVideos();
     watchScreenshots();
     linkScreenshots();
+    addPlayButtons();
     wirePdfMenus();
   });
 })();
