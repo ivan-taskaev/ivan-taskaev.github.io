@@ -22,6 +22,7 @@
   <symbol id="i-github" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.5 5.6 3.5 9s-1.1 6.4-3.5 9c-2.4-2.6-3.5-5.6-3.5-9S9.6 5.6 12 3Z"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
 <header class="topbar">
@@ -40,8 +41,14 @@
         <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
         <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn--small btn--primary" lang="ru" href="assets/cv/ivan-taskaev-cv-ru.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
-      <a class="btn btn--small btn--primary" lang="en" href="assets/cv/ivan-taskaev-cv-en.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+      <details class="pdf-menu pdf-menu--right">
+        <summary class="btn btn--small btn--primary"><svg class="icon"><use href="#i-download"/></svg>PDF<svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
+        <div class="pdf-menu__list">
+          <div class="pdf-menu__label"><span lang="ru">Язык резюме</span><span lang="en">Resume language</span></div>
+          <a href="assets/cv/ivan-taskaev-cv-ru.pdf" download>Русский<span>RU</span></a>
+          <a href="assets/cv/ivan-taskaev-cv-en.pdf" download>English<span>EN</span></a>
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -59,10 +66,14 @@
         <span lang="en">Nha Trang, Vietnam · remote · Russian, English B1</span>
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" lang="ru" href="assets/cv/ivan-taskaev-cv-ru.pdf" download><svg class="icon"><use href="#i-download"/></svg>Скачать PDF</a>
-        <a class="btn" lang="ru" href="assets/cv/ivan-taskaev-cv-en.pdf" download>PDF in English</a>
-        <a class="btn btn--primary" lang="en" href="assets/cv/ivan-taskaev-cv-en.pdf" download><svg class="icon"><use href="#i-download"/></svg>Download PDF</a>
-        <a class="btn" lang="en" href="assets/cv/ivan-taskaev-cv-ru.pdf" download>PDF на русском</a>
+        <details class="pdf-menu">
+          <summary class="btn btn--primary"><svg class="icon"><use href="#i-download"/></svg><span lang="ru">Скачать PDF</span><span lang="en">Download PDF</span><svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="pdf-menu__list">
+            <div class="pdf-menu__label"><span lang="ru">Язык резюме</span><span lang="en">Resume language</span></div>
+            <a href="assets/cv/ivan-taskaev-cv-ru.pdf" download>Русский<span>RU</span></a>
+            <a href="assets/cv/ivan-taskaev-cv-en.pdf" download>English<span>EN</span></a>
+          </div>
+        </details>
       </div>
     </div>
     <ul class="contacts">

@@ -161,6 +161,43 @@ img { max-width: 100%; }
 .btn--small { padding: 0.5rem 0.85rem; font-size: 0.82rem; }
 .btn .icon { width: 1.05em; height: 1.05em; }
 
+/* "Download PDF" button that opens a language choice */
+.pdf-menu { position: relative; display: inline-block; }
+.pdf-menu summary { list-style: none; cursor: pointer; user-select: none; }
+.pdf-menu summary::-webkit-details-marker { display: none; }
+.pdf-menu__chevron { transition: transform 0.2s; }
+.pdf-menu[open] .pdf-menu__chevron { transform: rotate(180deg); }
+.pdf-menu__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 30;
+  display: grid;
+  min-width: 200px;
+  padding: 6px;
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  animation: pdf-menu-in 0.15s ease-out;
+}
+.pdf-menu--right .pdf-menu__list { left: auto; right: 0; }
+.pdf-menu__label { padding: 0.45rem 0.75rem 0.35rem; color: var(--muted); font: 600 0.7rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; }
+.pdf-menu__list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 9px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+.pdf-menu__list a:hover { background: var(--surface-2); }
+.pdf-menu__list a span { color: var(--muted); font: 500 0.78rem/1 var(--mono); }
+@keyframes pdf-menu-in { from { opacity: 0; transform: translateY(-4px); } }
+
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .chips li {
   padding: 0.22rem 0.65rem;

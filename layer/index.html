@@ -17,6 +17,7 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
 <header class="topbar">
@@ -35,8 +36,14 @@
         <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
         <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn--small btn--primary" lang="ru" href="../assets/cv/ivan-taskaev-cv-ru.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
-      <a class="btn btn--small btn--primary" lang="en" href="../assets/cv/ivan-taskaev-cv-en.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+      <details class="pdf-menu pdf-menu--right">
+        <summary class="btn btn--small btn--primary"><svg class="icon"><use href="#i-download"/></svg>PDF<svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
+        <div class="pdf-menu__list">
+          <div class="pdf-menu__label"><span lang="ru">Язык резюме</span><span lang="en">Resume language</span></div>
+          <a href="../assets/cv/ivan-taskaev-cv-ru.pdf" download>Русский<span>RU</span></a>
+          <a href="../assets/cv/ivan-taskaev-cv-en.pdf" download>English<span>EN</span></a>
+        </div>
+      </details>
     </div>
   </div>
 </header>

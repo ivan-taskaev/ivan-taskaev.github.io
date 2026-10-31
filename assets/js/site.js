@@ -91,6 +91,25 @@
     }
   }
 
+  // PDF language menus (<details class="pdf-menu">) close on an outside click, after a choice and on Escape.
+  function closePdfMenus(except) {
+    var menus = document.querySelectorAll('details.pdf-menu[open]');
+    for (var i = 0; i < menus.length; i++) {
+      if (menus[i] !== except) menus[i].open = false;
+    }
+  }
+
+  function wirePdfMenus() {
+    document.addEventListener('click', function (e) {
+      var menu = e.target.closest('details.pdf-menu');
+      closePdfMenus(menu);
+      if (menu && e.target.closest('.pdf-menu__list a')) menu.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePdfMenus(null);
+    });
+  }
+
   applyLang(pickLang());
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -102,5 +121,6 @@
     mountVideos();
     watchScreenshots();
     linkScreenshots();
+    wirePdfMenus();
   });
 })();
