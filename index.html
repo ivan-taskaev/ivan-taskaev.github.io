@@ -9,7 +9,7 @@
   <meta name="description" content="Иван Таскаев, PHP / Backend-разработчик (Symfony). Резюме и кейсы Trezo и Layer. Ivan Taskaev, PHP / Backend Developer: resume and case studies.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/site.js"></script>
 </head>
@@ -53,9 +53,10 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap wrap--wide bento">
   <section class="hero">
-    <div>
+    <div class="intro">
+      <p class="kicker"><span lang="ru">Резюме</span><span lang="en">Resume</span></p>
       <h1><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span></h1>
       <p class="hero__role">
         <span lang="ru">PHP / Backend-разработчик · Symfony, Laravel</span>
@@ -85,21 +86,26 @@
     </ul>
   </section>
 
+  <figure class="hero-art" aria-hidden="true">
+    <img class="hero-art__a" src="assets/img/trezo/home.webp" alt="" width="1920" height="1080">
+    <img class="hero-art__b" src="assets/img/layer/home.webp" alt="" width="1920" height="1080">
+  </figure>
+
   <div class="tiles">
     <div class="tile">
-      <b><span lang="ru">3+ года в PHP</span><span lang="en">3+ years of PHP</span></b>
-      <span lang="ru">коммерческая разработка на Symfony, есть опыт с Laravel</span>
-      <span lang="en">commercial Symfony development, some Laravel</span>
+      <b><span class="tile__num">3+</span> <span lang="ru">года в PHP</span><span lang="en">years of PHP</span></b>
+      <span class="tile__d" lang="ru">коммерческая разработка на Symfony, есть опыт с Laravel</span>
+      <span class="tile__d" lang="en">commercial Symfony development, some Laravel</span>
     </div>
     <div class="tile">
-      <b><span lang="ru">Интеграции и очереди</span><span lang="en">Integrations and queues</span></b>
-      <span lang="ru">обмен данными между PIM, e-commerce, 1C-Bitrix и 1С на RabbitMQ</span>
-      <span lang="en">data exchange between PIM, e-commerce, 1C-Bitrix and 1C over RabbitMQ</span>
+      <b><span class="tile__num tile__num--icon">⇄</span> <span lang="ru">Интеграции и очереди</span><span lang="en">Integrations and queues</span></b>
+      <span class="tile__d" lang="ru">обмен данными между PIM, e-commerce, 1C-Bitrix и 1С на RabbitMQ</span>
+      <span class="tile__d" lang="en">data exchange between PIM, e-commerce, 1C-Bitrix and 1C over RabbitMQ</span>
     </div>
     <div class="tile">
-      <b><span lang="ru">2 продукта в продакшене</span><span lang="en">2 products in production</span></b>
-      <span lang="ru">Trezo и Layer: backend, инфраструктура, CI/CD</span>
-      <span lang="en">Trezo and Layer: backend, infrastructure, CI/CD</span>
+      <b><span class="tile__num">2</span> <span lang="ru">продукта в продакшене</span><span lang="en">products in production</span></b>
+      <span class="tile__d" lang="ru">Trezo и Layer: backend, инфраструктура, CI/CD</span>
+      <span class="tile__d" lang="en">Trezo and Layer: backend, infrastructure, CI/CD</span>
     </div>
   </div>
   <p class="summary" lang="ru">
