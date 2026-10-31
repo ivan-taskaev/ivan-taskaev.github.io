@@ -36,7 +36,8 @@ html[data-lang="en"] body [lang="ru"] {
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* Same layout width with or without a scrollbar. */
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
 body {
   margin: 0;
