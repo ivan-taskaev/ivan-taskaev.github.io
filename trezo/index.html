@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru" data-lang="ru"
+      data-title-ru="Trezo — кейс · Иван Таскаев"
+      data-title-en="Trezo — case study · Ivan Taskaev">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trezo — кейс · Иван Таскаев</title>
+  <meta name="description" content="Trezo: маркетплейс объявлений о товарах и услугах с чатом и AI-модерацией. Symfony, PostgreSQL, Redis, Next.js, AWS. Кейс Ивана Таскаева.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap wrap--wide topbar__inner">
+    <a class="brand" href="../">
+      <span class="brand__mark" aria-hidden="true"><span lang="ru">ИТ</span><span lang="en">IT</span></span>
+      <span class="brand__name"><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="../"><span lang="ru">Резюме</span><span lang="en">Resume</span></a>
+      <a href="../trezo/" aria-current="page">Trezo</a>
+      <a href="../layer/">Layer</a>
+    </nav>
+    <div class="topbar__actions">
+      <div class="lang-switch" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--small btn--primary" lang="ru" href="../assets/cv/ivan-taskaev-cv-ru.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+      <a class="btn btn--small btn--primary" lang="en" href="../assets/cv/ivan-taskaev-cv-en.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap wrap--wide">
+  <a class="back" href="../"><span lang="ru">← К резюме</span><span lang="en">← Back to resume</span></a>
+
+  <section class="case-hero">
+    <div class="eyebrow"><span lang="ru">Независимый проект · 2026</span><span lang="en">Independent project · 2026</span></div>
+    <h1>Trezo</h1>
+    <p class="case-hero__lead" lang="ru">
+      Маркетплейс объявлений о товарах и услугах, сделанный с нуля: каталог с фильтрами по характеристикам
+      категорий, чат покупателя с продавцом и AI-модерация. Я сооснователь проекта: руководил разработкой
+      и отвечал за серверную часть.
+    </p>
+    <p class="case-hero__lead" lang="en">
+      A classifieds marketplace for goods and services, built from scratch: a catalog filtered by each
+      category’s attributes, buyer–seller chat, and AI moderation. I co-founded the project, led
+      development and owned the backend.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">Сооснователь, ведущий разработчик</span><span lang="en">Co-founder, lead developer</span></dd>
+      </div>
+      <div>
+        <dt><span lang="ru">Команда</span><span lang="en">Team</span></dt>
+        <dd><span lang="ru">Я и начинающий frontend-разработчик</span><span lang="en">Me and a junior frontend developer</span></dd>
+      </div>
+      <div>
+        <dt><span lang="ru">Сайт</span><span lang="en">Website</span></dt>
+        <dd><a href="https://trezo.one" target="_blank" rel="noopener">trezo.one</a></dd>
+      </div>
+    </dl>
+
+    <ul class="chips" aria-label="Stack">
+      <li>PHP 8.5</li><li>Symfony 8.1</li><li>PostgreSQL 16</li><li>Redis</li><li>Mercure (SSE)</li>
+      <li>Next.js</li><li>TypeScript</li><li>OpenAI API</li><li>Telegram Bot API</li>
+      <li>Elasticsearch · Kibana</li><li>Cloudflare R2</li><li>AWS</li><li>Docker</li><li>Caddy</li>
+      <li>GitHub Actions</li><li>PHPUnit · PHPStan</li><li>Playwright</li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="video">
+    <h2 class="section__title" id="video"><span lang="ru">Демо</span><span lang="en">Demo</span></h2>
+    <div class="video">
+      <video controls muted playsinline preload="metadata" poster="../assets/img/trezo/home.webp">
+        <source src="../assets/video/trezo-demo.webm" type="video/webm">
+      </video>
+    </div>
+    <p class="video-note">
+      <span lang="ru">45 секунд по живому сайту: каталог, фильтры, поиск, объявление, тёмная тема, английская версия. Имена продавцов размыты.</span>
+      <span lang="en">45 seconds on the live site: catalog, filters, search, a listing, dark theme, English version. Seller names are blurred.</span>
+    </p>
+  </section>
+
+  <section class="section prose" aria-labelledby="context">
+    <h2 class="section__title" id="context"><span lang="ru">Задача</span><span lang="en">The problem</span></h2>
+    <div lang="ru">
+      <p>
+        Trezo — площадка объявлений: люди продают вещи и предлагают услуги, покупатели ищут по категориям
+        и характеристикам и договариваются в чате. Был готовый дизайн 14 экранов, кода не было.
+      </p>
+      <p>
+        Нужно было с нуля построить API, вместе с frontend-разработчиком перенести дизайн в продакшен
+        и выстроить модерацию так, чтобы объявления проверялись быстро и без ручного разбора каждого.
+      </p>
+    </div>
+    <div lang="en">
+      <p>
+        Trezo is a classifieds site: people sell things and offer services, buyers search by category
+        and attributes and agree on a deal in chat. There was a finished design of 14 screens and no code.
+      </p>
+      <p>
+        The job was to build the API from scratch, ship the design to production together with
+        the frontend developer, and set up moderation so listings get checked quickly without reviewing each one by hand.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="screens">
+    <h2 class="section__title" id="screens"><span lang="ru">Скриншоты</span><span lang="en">Screenshots</span></h2>
+    <div class="gallery">
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/home.webp" width="1920" height="1080" decoding="async" alt="Главная Trezo: категории и новые объявления">
+          <div class="placeholder"><b>home.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Главная: категории и свежие объявления</span><span lang="en">Home: categories and new listings</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/listing.webp" width="1920" height="1080" decoding="async" alt="Страница объявления: галерея фото, описание, цена, продавец">
+          <div class="placeholder"><b>listing.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Объявление: галерея, описание, цена</span><span lang="en">Listing: gallery, description, price</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/filters.webp" width="1920" height="1080" decoding="async" alt="Каталог услуг с открытым окном всех фильтров">
+          <div class="placeholder"><b>filters.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Фильтры строятся из характеристик категории</span><span lang="en">Filters come from the category’s attributes</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/dark.webp" width="1920" height="1080" decoding="async" alt="Главная Trezo в тёмной теме">
+          <div class="placeholder"><b>dark.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Тёмная тема</span><span lang="en">Dark theme</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/en.webp" width="1920" height="1080" decoding="async" alt="Английская версия интерфейса Trezo">
+          <div class="placeholder"><b>en.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Интерфейс на английском</span><span lang="en">English interface</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/trezo/login.webp" width="1920" height="1080" decoding="async" alt="Вход через Google или по email">
+          <div class="placeholder"><b>login.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Вход через Google или по email</span><span lang="en">Sign-in with Google or email</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="numbers">
+    <h2 class="section__title" id="numbers"><span lang="ru">В цифрах</span><span lang="en">By the numbers</span></h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Модули бэкенда</span><span lang="en">Backend modules</span></div>
+        <div class="stat__value">13</div>
+        <div class="stat__context"><span lang="ru">плюс общий слой; внутри Domain, Application, Infrastructure, Presentation</span><span lang="en">plus a shared kernel; each split into Domain, Application, Infrastructure, Presentation</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Спецификации поведения</span><span lang="en">Behavior specs</span></div>
+        <div class="stat__value">44</div>
+        <div class="stat__context"><span lang="ru">OpenSpec, 70 завершённых изменений</span><span lang="en">OpenSpec, 70 completed changes</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Тестовые файлы</span><span lang="en">Test files</span></div>
+        <div class="stat__value">104</div>
+        <div class="stat__context"><span lang="ru">PHPUnit и Playwright</span><span lang="en">PHPUnit and Playwright</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Мои коммиты</span><span lang="en">My commits</span></div>
+        <div class="stat__value">73 / 80</div>
+        <div class="stat__context"><span lang="ru">за 7 недель разработки</span><span lang="en">over 7 weeks of development</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="arch">
+    <h2 class="section__title" id="arch"><span lang="ru">Как устроено</span><span lang="en">Architecture</span></h2>
+    <div class="arch">
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Клиент</span><span lang="en">Client</span></div>
+        <div class="arch__box"><b>Next.js</b><span lang="ru">App Router, TypeScript, SSR, свой i18n RU/EN</span><span lang="en">App Router, TypeScript, SSR, custom RU/EN i18n</span></div>
+        <div class="arch__box"><b><span lang="ru">Админка</span><span lang="en">Admin panel</span></b><span>EasyAdmin</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title">API</div>
+        <div class="arch__box"><b>Symfony 8.1 · PHP 8.5</b><span>JSON API, JWT, OpenAPI</span></div>
+        <div class="arch__box"><b>Mercure</b><span lang="ru">сообщения в реальном времени (SSE)</span><span lang="en">real-time messages (SSE)</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Данные и интеграции</span><span lang="en">Data &amp; integrations</span></div>
+        <div class="arch__box"><b>PostgreSQL 16 · Redis</b></div>
+        <div class="arch__box"><b>Cloudflare R2</b><span lang="ru">фото объявлений</span><span lang="en">listing photos</span></div>
+        <div class="arch__box"><b>OpenAI · Telegram</b><span lang="ru">AI-проверка и уведомления модераторам</span><span lang="en">AI screening and moderator alerts</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Эксплуатация</span><span lang="en">Operations</span></div>
+        <div class="arch__box"><b>AWS · Docker Compose · Caddy</b><span>HTTPS</span></div>
+        <div class="arch__box"><b>Filebeat → Elasticsearch → Kibana</b><span lang="ru">JSON-логи с request_id</span><span lang="en">JSON logs with request_id</span></div>
+        <div class="arch__box"><b>GitHub Actions</b><span lang="ru">стиль, статанализ, тесты, сборка, деплой</span><span lang="en">style, static analysis, tests, build, deploy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="highlights">
+    <h2 class="section__title" id="highlights"><span lang="ru">Интересные задачи</span><span lang="en">Engineering highlights</span></h2>
+    <div class="highlights">
+      <article class="highlight">
+        <div class="highlight__tag">AI</div>
+        <h3><span lang="ru">Автомодерация объявлений</span><span lang="en">Automatic listing moderation</span></h3>
+        <div lang="ru">
+          <p>Каждое новое или отредактированное объявление проверяет модель OpenAI: текст, соответствие выбранной категории, адекватность цены с учётом характеристик.</p>
+          <p>Проверка идёт в фоне, через очередь. Вердикт видно в админке, а спорные случаи уходят модератору в Telegram. Если решение уже принято, устаревший вердикт не отправляется.</p>
+        </div>
+        <div lang="en">
+          <p>Every new or edited listing is checked by an OpenAI model: the text, whether it fits the chosen category, and whether the price makes sense given the attributes.</p>
+          <p>Screening runs in the background through a queue. The verdict shows up in the admin panel, and questionable cases go to a moderator in Telegram. If a decision has already been made, a stale verdict is not sent.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Реальное время</span><span lang="en">Real time</span></div>
+        <h3><span lang="ru">Чат без потерянных сообщений</span><span lang="en">Chat that doesn’t lose messages</span></h3>
+        <div lang="ru">
+          <p>Сообщения приходят через Mercure (SSE). У каждого диалога свой топик, подписаться на него могут только участники. Сделку фиксируют прямо в диалоге.</p>
+          <p>После переподключения клиент догружает пропущенное по курсору id, поэтому обрыв сети не теряет сообщения.</p>
+        </div>
+        <div lang="en">
+          <p>Messages arrive over Mercure (SSE). Each conversation has its own topic, and only its participants can subscribe. The deal is closed right in the conversation.</p>
+          <p>After a reconnect the client catches up from an id cursor, so a dropped connection never loses messages.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Каталог</span><span lang="en">Catalog</span></div>
+        <h3><span lang="ru">Свои характеристики у каждой категории</span><span lang="en">Attributes per category</span></h3>
+        <div lang="ru">
+          <p>У транспорта — пробег и год, у услуг — формат и опыт. Характеристики задаются для категории и подкатегории и наследуются.</p>
+          <p>Из них же строятся форма объявления, фильтры каталога и подсказки для AI-проверки.</p>
+        </div>
+        <div lang="en">
+          <p>Vehicles have mileage and year, services have format and experience. Attributes are defined per category and subcategory and inherited.</p>
+          <p>The same attributes drive the listing form, the catalog filters and the hints for AI screening.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag">Spec-driven</div>
+        <h3><span lang="ru">Разработка с AI-агентами</span><span lang="en">Development with AI agents</span></h3>
+        <div lang="ru">
+          <p>Задача сначала описывается спецификацией в OpenSpec: зачем, что меняется, как проверить. Агенты пишут код по правилам проекта.</p>
+          <p>Результат проходит CI (php-cs-fixer, PHPStan, PHPUnit, ESLint, tsc, Playwright) и отдельных агентов-ревьюеров по качеству и безопасности.</p>
+        </div>
+        <div lang="en">
+          <p>Every task starts as an OpenSpec spec: why, what changes, how to verify it. Agents write code following the project’s rules.</p>
+          <p>The result goes through CI (php-cs-fixer, PHPStan, PHPUnit, ESLint, tsc, Playwright) and separate reviewer agents for quality and security.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section prose" aria-labelledby="did">
+    <h2 class="section__title" id="did"><span lang="ru">Что я сделал</span><span lang="en">What I built</span></h2>
+    <ul class="list" lang="ru">
+      <li><b>Руководство:</b> руководил разработкой, отвечал за серверную часть, помогал начинающему frontend-разработчику: архитектура, ревью, разбор задач.</li>
+      <li><b>Аккаунты:</b> stateless JWT с refresh-токенами, регистрация с подтверждением email, сброс пароля, вход через Google, ограничение частоты запросов.</li>
+      <li><b>Объявления:</b> дерево категорий с характеристиками, фото в Cloudflare R2, каталог с фильтрами и сортировкой, поиск, избранное, жалобы.</li>
+      <li><b>Модерация:</b> AI-проверка, модератор в Telegram, повторная модерация после правок.</li>
+      <li><b>Чат и сделки:</b> переписка в реальном времени, фиксация сделки в диалоге, жалобы на диалоги.</li>
+      <li><b>Админка:</b> пользователи с блокировкой, объявления, диалоги, журнал аудита, метрики.</li>
+      <li><b>Инфраструктура:</b> AWS, Docker Compose, Caddy с автоматическим TLS, логи в Elasticsearch и Kibana, алерты об ошибках в Telegram, CI/CD на GitHub Actions.</li>
+    </ul>
+    <ul class="list" lang="en">
+      <li><b>Leadership:</b> led development, owned the backend, mentored a junior frontend developer: architecture, reviews, task breakdown.</li>
+      <li><b>Accounts:</b> stateless JWT with refresh tokens, sign-up with email verification, password reset, Google sign-in, rate limiting.</li>
+      <li><b>Listings:</b> a category tree with attributes, photos in Cloudflare R2, a catalog with filters and sorting, search, favorites, reports.</li>
+      <li><b>Moderation:</b> AI screening, a moderator in Telegram, re-moderation after edits.</li>
+      <li><b>Chat and deals:</b> real-time messaging, closing the deal in the conversation, conversation reports.</li>
+      <li><b>Admin panel:</b> users with suspension, listings, conversations, an audit log, metrics.</li>
+      <li><b>Infrastructure:</b> AWS, Docker Compose, Caddy with automatic TLS, logs in Elasticsearch and Kibana, Telegram error alerts, CI/CD on GitHub Actions.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap wrap--wide footer__inner">
+    <span><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span> · <a href="mailto:taskaev.ivan@gmail.com">taskaev.ivan@gmail.com</a></span>
+    <a href="../layer/"><span lang="ru">Другой кейс: Layer →</span><span lang="en">Other case: Layer →</span></a>
+  </div>
+</footer>
+
+</body>
+</html>

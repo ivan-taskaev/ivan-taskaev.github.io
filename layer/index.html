@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ru" data-lang="ru"
+      data-title-ru="Layer — кейс · Иван Таскаев"
+      data-title-en="Layer — case study · Ivan Taskaev">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layer — кейс · Иван Таскаев</title>
+  <meta name="description" content="Layer: магазин музыкальных сэмплов — сайт, Telegram Mini App и кабинет авторов. Go, Python, React, PostgreSQL, S3. Кейс Ивана Таскаева.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap wrap--wide topbar__inner">
+    <a class="brand" href="../">
+      <span class="brand__mark" aria-hidden="true"><span lang="ru">ИТ</span><span lang="en">IT</span></span>
+      <span class="brand__name"><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="../"><span lang="ru">Резюме</span><span lang="en">Resume</span></a>
+      <a href="../trezo/">Trezo</a>
+      <a href="../layer/" aria-current="page">Layer</a>
+    </nav>
+    <div class="topbar__actions">
+      <div class="lang-switch" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--small btn--primary" lang="ru" href="../assets/cv/ivan-taskaev-cv-ru.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+      <a class="btn btn--small btn--primary" lang="en" href="../assets/cv/ivan-taskaev-cv-en.pdf" download><svg class="icon"><use href="#i-download"/></svg>PDF</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap wrap--wide">
+  <a class="back" href="../"><span lang="ru">← К резюме</span><span lang="en">← Back to resume</span></a>
+
+  <section class="case-hero">
+    <div class="eyebrow"><span lang="ru">Независимый проект · 2026</span><span lang="en">Independent project · 2026</span></div>
+    <h1>Layer</h1>
+    <p class="case-hero__lead" lang="ru">
+      Магазин музыкальных сэмплов: сайт, Telegram Mini App и кабинет авторов. Я один с нуля
+      разработал продукт целиком — приложения для покупателей, кабинет авторов, модерацию,
+      платежи и инфраструктуру.
+    </p>
+    <p class="case-hero__lead" lang="en">
+      A music sample store: a website, a Telegram Mini App and an author portal. I single-handedly
+      built the whole product from scratch — the buyer apps, the author portal, moderation,
+      payments and infrastructure.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">Единственный разработчик</span><span lang="en">Sole developer</span></dd>
+      </div>
+      <div>
+        <dt><span lang="ru">Бот</span><span lang="en">Bot</span></dt>
+        <dd><a href="https://t.me/layerstore_bot" target="_blank" rel="noopener">@layerstore_bot</a></dd>
+      </div>
+      <div>
+        <dt><span lang="ru">Сайт</span><span lang="en">Website</span></dt>
+        <dd><a href="https://app.layeraudio.ru" target="_blank" rel="noopener">app.layeraudio.ru</a></dd>
+      </div>
+    </dl>
+
+    <ul class="chips" aria-label="Stack">
+      <li>Go</li><li>PostgreSQL</li><li>Redis</li><li>React</li><li>TypeScript</li><li>Vite</li>
+      <li>Python · ffmpeg</li><li>Telegram Mini Apps</li><li>Telegram Bot API</li><li>YooKassa</li>
+      <li>S3</li><li>Docker</li><li>GitHub Actions</li><li>Caddy</li><li>Playwright</li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="video">
+    <h2 class="section__title" id="video"><span lang="ru">Демо</span><span lang="en">Demo</span></h2>
+    <div class="video">
+      <video controls muted playsinline preload="metadata" poster="../assets/img/layer/home.webp">
+        <source src="../assets/video/layer-demo.webm" type="video/webm">
+      </video>
+    </div>
+    <p class="video-note">
+      <span lang="ru">40 секунд по живому сайту: пак, проигрывание сэмплов, каталог, фильтры по типу и тональности, тарифы. Видео без звука.</span>
+      <span lang="en">40 seconds on the live site: a pack, sample playback, the catalog, filters by type and key, plans. No sound.</span>
+    </p>
+  </section>
+
+  <section class="section prose" aria-labelledby="context">
+    <h2 class="section__title" id="context"><span lang="ru">Задача</span><span lang="en">The problem</span></h2>
+    <div lang="ru">
+      <p>
+        Layer продаёт звуки для создания музыки: паки сэмплов и лупов от авторов. Покупатель
+        открывает Mini App прямо в Telegram или сайт, слушает превью и покупает сэмплы за кредиты.
+        Кредиты приходят с подпиской и копятся. Авторы загружают паки через свой кабинет, и каждый
+        сэмпл проходит модерацию, прежде чем появится в магазине.
+      </p>
+      <p>
+        В таком магазине главное — деньги и контент. Платёж не должен потеряться или пройти дважды,
+        платный файл не должен утечь через прослушивание, а выпуск новой версии не должен ничего сломать.
+      </p>
+    </div>
+    <div lang="en">
+      <p>
+        Layer sells sounds for making music: sample and loop packs from authors. Buyers open the
+        Mini App right inside Telegram or the website, listen to previews and buy samples for credits.
+        Credits come with a subscription and roll over. Authors upload packs through their own portal,
+        and every sample is reviewed before it appears in the store.
+      </p>
+      <p>
+        In a store like this, money and content come first. A payment must never get lost or go
+        through twice, a paid file must not leak through the preview player, and a new release
+        must not break anything.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="screens">
+    <h2 class="section__title" id="screens"><span lang="ru">Скриншоты</span><span lang="en">Screenshots</span></h2>
+    <div class="gallery">
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/home.webp" width="1920" height="1080" decoding="async" alt="Главная Layer: популярный пак и популярные паки">
+          <div class="placeholder"><b>home.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Главная: популярный пак и подборки</span><span lang="en">Home: featured pack and popular packs</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/player.webp" width="1920" height="1080" decoding="async" alt="Страница пака с играющим сэмплом и плеером">
+          <div class="placeholder"><b>player.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Пак и плеер: превью без доступа к мастер-файлу</span><span lang="en">Pack and player: previews without access to the master file</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/samples.webp" width="1920" height="1080" decoding="async" alt="Каталог сэмплов с BPM, тональностью и длительностью">
+          <div class="placeholder"><b>samples.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Каталог сэмплов: BPM, тональность, длительность</span><span lang="en">Sample catalog: BPM, key, length</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/filters.webp" width="1920" height="1080" decoding="async" alt="Фильтры: тип, жанр, стиль, тональность, BPM">
+          <div class="placeholder"><b>filters.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Фильтры: тип, жанр, стиль, тональность, BPM</span><span lang="en">Filters: type, genre, style, key, BPM</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/packs.webp" width="1920" height="1080" decoding="async" alt="Каталог паков">
+          <div class="placeholder"><b>packs.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Паки от разных авторов</span><span lang="en">Packs from different authors</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot__frame">
+          <img src="../assets/img/layer/subscribe.webp" width="1920" height="1080" decoding="async" alt="Тарифы подписки с кредитами">
+          <div class="placeholder"><b>subscribe.webp</b></div>
+        </div>
+        <figcaption><span lang="ru">Тарифы: кредиты не сгорают и копятся</span><span lang="en">Plans: credits never expire and roll over</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="numbers">
+    <h2 class="section__title" id="numbers"><span lang="ru">В цифрах</span><span lang="en">By the numbers</span></h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Приложения</span><span lang="en">Apps</span></div>
+        <div class="stat__value">5</div>
+        <div class="stat__context"><span lang="ru">API, бот, загрузчик, Mini App, админка</span><span lang="en">API, bot, uploader, Mini App, admin</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Тестовые файлы</span><span lang="en">Test files</span></div>
+        <div class="stat__value">235</div>
+        <div class="stat__context">Go, Vitest, Playwright, pytest</div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Спецификации поведения</span><span lang="en">Behavior specs</span></div>
+        <div class="stat__value">65</div>
+        <div class="stat__context"><span lang="ru">OpenSpec, 52 завершённых изменения</span><span lang="en">OpenSpec, 52 completed changes</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Строки кода</span><span lang="en">Lines of code</span></div>
+        <div class="stat__value"><span lang="ru">≈68 тыс.</span><span lang="en">≈68K</span></div>
+        <div class="stat__context">Go, TypeScript, Python</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="arch">
+    <h2 class="section__title" id="arch"><span lang="ru">Как устроено</span><span lang="en">Architecture</span></h2>
+    <div class="arch">
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Клиенты</span><span lang="en">Clients</span></div>
+        <div class="arch__box"><b><span lang="ru">Сайт и Telegram Mini App</span><span lang="en">Website &amp; Telegram Mini App</span></b><span>React · Vite · TypeScript</span></div>
+        <div class="arch__box"><b><span lang="ru">Кабинет авторов и админка</span><span lang="en">Author portal &amp; admin</span></b><span>React · Vite</span></div>
+        <div class="arch__box"><b><span lang="ru">Telegram-бот</span><span lang="en">Telegram bot</span></b><span>Go</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Сервисы</span><span lang="en">Services</span></div>
+        <div class="arch__box"><b>API</b><span lang="ru">Go · каталог, покупки, подписки, роли</span><span lang="en">Go · catalog, purchases, subscriptions, roles</span></div>
+        <div class="arch__box"><b><span lang="ru">Загрузчик файлов</span><span lang="en">File uploader</span></b><span lang="ru">Python · проверка, превью, обложки, анализ</span><span lang="en">Python · validation, previews, covers, analysis</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Данные и интеграции</span><span lang="en">Data &amp; integrations</span></div>
+        <div class="arch__box"><b>PostgreSQL · Redis</b></div>
+        <div class="arch__box"><b>S3</b><span lang="ru">мастер-файлы и превью отдельно</span><span lang="en">masters and previews stored separately</span></div>
+        <div class="arch__box"><b>YooKassa</b><span lang="ru">оплата подписок</span><span lang="en">subscription payments</span></div>
+      </div>
+      <div class="arch__col">
+        <div class="arch__title"><span lang="ru">Эксплуатация</span><span lang="en">Operations</span></div>
+        <div class="arch__box"><b>GitHub Actions → GHCR</b><span lang="ru">образы по SHA и digest</span><span lang="en">images pinned by SHA and digest</span></div>
+        <div class="arch__box"><b>Docker Compose · Caddy</b><span>HTTPS</span></div>
+        <div class="arch__box"><b><span lang="ru">Бэкап</span><span lang="en">Backups</span></b><span lang="ru">ночной, зашифрованный, с проверкой восстановления</span><span lang="en">nightly, encrypted, with restore checks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="highlights">
+    <h2 class="section__title" id="highlights"><span lang="ru">Интересные задачи</span><span lang="en">Engineering highlights</span></h2>
+    <div class="highlights">
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Безопасность</span><span lang="en">Security</span></div>
+        <h3><span lang="ru">Прослушивание не заменяет покупку</span><span lang="en">Listening is not buying</span></h3>
+        <div lang="ru">
+          <p>Если плеер отдаёт ссылку на тот же файл, что и платное скачивание, перебором ссылок можно бесплатно выкачать весь каталог.</p>
+          <p>Поэтому загрузчик при приёме трека делает через ffmpeg отдельное сжатое превью, и плеер получает только его. Без превью трек не загружается вовсе.</p>
+        </div>
+        <div lang="en">
+          <p>If the player streams the same file as the paid download, anyone can iterate over links and grab the whole catalog for free.</p>
+          <p>So the uploader renders a separate compressed preview with ffmpeg when a track comes in, and the player only ever gets that. A track without a preview is rejected.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Платежи</span><span lang="en">Payments</span></div>
+        <h3><span lang="ru">Деньги списаны — подписка есть</span><span lang="en">Charged means subscribed</span></h3>
+        <div lang="ru">
+          <p>Подписку нельзя активировать только по возврату браузера после оплаты: пользователь может закрыть вкладку, и деньги уйдут без подписки.</p>
+          <p>Её активируют webhook YooKassa и фоновая сверка зависших платежей. Автопродление готово и включается флагом: при повторе после сбоя используется тот же ключ идемпотентности, и карту не списывают дважды за один период.</p>
+        </div>
+        <div lang="en">
+          <p>A subscription can’t rely on the browser coming back after payment: the user may close the tab and lose the money with no subscription.</p>
+          <p>It is activated by the YooKassa webhook and a background reconciliation of stuck payments. Auto-renewal is built and sits behind a flag: a retry after a crash reuses the same idempotency key, so a card is never charged twice for one period.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Конкурентность</span><span lang="en">Concurrency</span></div>
+        <h3><span lang="ru">Одна награда — один раз</span><span lang="en">One reward, once</span></h3>
+        <div lang="ru">
+          <p>Бот дарит бесплатные скачивания за подписку на каналы. Двойное нажатие «Подписался ✅» или повторная доставка апдейта от Telegram не должны начислять бонус дважды.</p>
+          <p>Проверка и начисление — одна атомарная операция в базе. Гонку покрывают тесты.</p>
+        </div>
+        <div lang="en">
+          <p>The bot grants free downloads for joining partner channels. A double tap on “Subscribed ✅” or a redelivered Telegram update must not credit the reward twice.</p>
+          <p>The check and the credit are a single atomic database operation, with tests covering the race.</p>
+        </div>
+      </article>
+      <article class="highlight">
+        <div class="highlight__tag"><span lang="ru">Релизы</span><span lang="en">Releases</span></div>
+        <h3><span lang="ru">В прод — только проверенный код</span><span lang="en">Only verified code ships</span></h3>
+        <div lang="ru">
+          <p>Деплой запускается по конкретному коммиту из <span class="mono">main</span>. Сначала все пять приложений проходят проверки, включая интеграционные тесты и Playwright. Образы собираются в CI и закрепляются по digest, секреты не попадают в артефакты GitHub.</p>
+          <p>Предыдущие релизы сохраняются, откат — тот же запуск со старым SHA.</p>
+        </div>
+        <div lang="en">
+          <p>Deploys run for a specific commit on <span class="mono">main</span>. All five apps must pass their checks first, including integration tests and Playwright. Images are built in CI and pinned by digest, and secrets never end up in GitHub artifacts.</p>
+          <p>Previous releases are kept; a rollback is the same run with an older SHA.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section prose" aria-labelledby="did">
+    <h2 class="section__title" id="did"><span lang="ru">Что я сделал</span><span lang="en">What I built</span></h2>
+    <ul class="list" lang="ru">
+      <li><b>Сайт и Mini App для покупателей:</b> каталог паков и сэмплов, поиск и фильтры с сортировкой по тональности и BPM, избранное, библиотека покупок, плеер с перемоткой и плавными переходами между превью на Web Audio. Вход на сайт через Telegram.</li>
+      <li><b>Кабинет авторов и модерация:</b> авторы загружают паки, каждый сэмпл проверяется до публикации. Массовая загрузка аудио, жанры, инструменты и типы, роли сотрудников.</li>
+      <li><b>Платежи:</b> подписки с оплатой через YooKassa, кредиты копятся между периодами и не теряются при смене тарифа, журнал кредитов, алерты о проблемах с платежами в Telegram.</li>
+      <li><b>Бот:</b> меню, реферальные ссылки, бонусы за подписку на каналы.</li>
+      <li><b>Загрузчик:</b> безопасная обработка файлов, превью, миниатюры обложек, анализ треков.</li>
+      <li><b>Инфраструктура:</b> хранение файлов в S3, сервер, HTTPS через Caddy, автоматический деплой (CI/CD), стенд для тестировщиков, ночные бэкапы.</li>
+    </ul>
+    <ul class="list" lang="en">
+      <li><b>Website and Mini App for buyers:</b> a catalog of packs and samples, search and filters with key and BPM sorting, favorites, a purchase library, a player with seeking and smooth transitions between previews on Web Audio. Website sign-in with Telegram.</li>
+      <li><b>Author portal and moderation:</b> authors upload packs, and every sample is reviewed before it goes live. Bulk audio upload, genres, instruments and types, staff roles.</li>
+      <li><b>Payments:</b> subscriptions paid through YooKassa, credits that roll over and survive plan changes, a credit ledger, Telegram alerts on payment problems.</li>
+      <li><b>Bot:</b> menu, referral links, rewards for joining channels.</li>
+      <li><b>Uploader:</b> safe file handling, previews, cover thumbnails, track analysis.</li>
+      <li><b>Infrastructure:</b> S3 file storage, the server, HTTPS via Caddy, automated deployment (CI/CD), a staging stand for testers, nightly backups.</li>
+    </ul>
+
+    <h3><span lang="ru">Как я работал</span><span lang="en">How I worked</span></h3>
+    <p lang="ru">
+      Каждое изменение начиналось со спецификации в OpenSpec: зачем оно нужно, что меняется, что затронет.
+      Затем задачи, тесты и код. Вёрстку Mini App сторожат визуальные тесты на шести ширинах экрана,
+      от 360 до 2560 px.
+    </p>
+    <p lang="en">
+      Every change started as an OpenSpec spec: why it is needed, what changes, what it affects.
+      Then tasks, tests and code. The Mini App layout is guarded by visual tests at six screen widths,
+      from 360 to 2560 px.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap wrap--wide footer__inner">
+    <span><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span> · <a href="mailto:taskaev.ivan@gmail.com">taskaev.ivan@gmail.com</a></span>
+    <a href="../trezo/"><span lang="ru">Другой кейс: Trezo →</span><span lang="en">Other case: Trezo →</span></a>
+  </div>
+</footer>
+
+</body>
+</html>
