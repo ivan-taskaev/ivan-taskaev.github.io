@@ -52,17 +52,17 @@
   <a class="back" href="../"><span lang="ru">← К резюме</span><span lang="en">← Back to resume</span></a>
 
   <section class="case-hero">
-    <div class="eyebrow"><span lang="ru">Независимый проект · 2026</span><span lang="en">Independent project · 2026</span></div>
+    <div class="eyebrow"><span lang="ru">Независимый проект · запущен в июле 2026</span><span lang="en">Independent project · live since July 2026</span></div>
     <h1>Trezo</h1>
     <p class="case-hero__lead" lang="ru">
       Маркетплейс объявлений о товарах и услугах, сделанный с нуля: каталог с фильтрами по характеристикам
-      категорий, чат покупателя с продавцом и AI-модерация. Я сооснователь проекта: руководил разработкой
-      и отвечал за серверную часть.
+      категорий, чат покупателя с продавцом и AI-модерация. Я сооснователь проекта: вёл разработку
+      и отвечал за backend и архитектуру.
     </p>
     <p class="case-hero__lead" lang="en">
       A classifieds marketplace for goods and services, built from scratch: a catalog filtered by each
-      category’s attributes, buyer–seller chat, and AI moderation. I co-founded the project, led
-      development and owned the backend.
+      category’s attributes, buyer–seller chat and AI moderation. I co-founded the project, led development
+      and owned the backend and architecture.
     </p>
 
     <dl class="facts">
@@ -83,7 +83,7 @@
     <ul class="chips" aria-label="Stack">
       <li>PHP 8.5</li><li>Symfony 8.1</li><li>PostgreSQL 16</li><li>Redis</li><li>Mercure (SSE)</li>
       <li>Next.js</li><li>TypeScript</li><li>OpenAI API</li><li>Telegram Bot API</li>
-      <li>Elasticsearch · Kibana</li><li>Cloudflare R2</li><li>AWS</li><li>Docker</li><li>Caddy</li>
+      <li><span lang="ru">ELK (логи)</span><span lang="en">ELK (logs)</span></li><li>Cloudflare R2</li><li>AWS</li><li>Docker</li><li>Caddy</li>
       <li>GitHub Actions</li><li>PHPUnit · PHPStan</li><li>Playwright</li>
     </ul>
   </section>
@@ -105,7 +105,7 @@
           <img src="../assets/img/trezo/home.webp" width="1920" height="1080" decoding="async" alt="Главная Trezo: категории и новые объявления">
           <div class="placeholder"><b>home.webp</b></div>
         </div>
-        <figcaption><span lang="ru">Главная: категории и свежие объявления</span><span lang="en">Home: categories and new listings</span></figcaption>
+        <figcaption><span lang="ru">Главная: категории и новые объявления</span><span lang="en">Home: categories and new listings</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
@@ -120,20 +120,6 @@
           <div class="placeholder"><b>filters.webp</b></div>
         </div>
         <figcaption><span lang="ru">Фильтры строятся из характеристик категории</span><span lang="en">Filters come from the category’s attributes</span></figcaption>
-      </figure>
-      <figure class="shot">
-        <div class="shot__frame">
-          <img src="../assets/img/trezo/dark.webp" width="1920" height="1080" decoding="async" alt="Главная Trezo в тёмной теме">
-          <div class="placeholder"><b>dark.webp</b></div>
-        </div>
-        <figcaption><span lang="ru">Тёмная тема</span><span lang="en">Dark theme</span></figcaption>
-      </figure>
-      <figure class="shot">
-        <div class="shot__frame">
-          <img src="../assets/img/trezo/en.webp" width="1920" height="1080" decoding="async" alt="Английская версия интерфейса Trezo">
-          <div class="placeholder"><b>en.webp</b></div>
-        </div>
-        <figcaption><span lang="ru">Интерфейс на английском</span><span lang="en">English interface</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
@@ -168,85 +154,55 @@
         <div class="arch__title"><span lang="ru">Инфраструктура и CI/CD</span><span lang="en">Infrastructure &amp; CI/CD</span></div>
         <div class="arch__box"><b>AWS EC2 · Docker Compose</b><span lang="ru">продакшен-сервер</span><span lang="en">production server</span></div>
         <div class="arch__box"><b>Caddy</b><span lang="ru">HTTPS с автоматическими сертификатами</span><span lang="en">HTTPS with automatic certificates</span></div>
-        <div class="arch__box"><b>GitHub Actions</b><span lang="ru">CI на каждый PR, деплой на сервер по SSH после CI</span><span lang="en">CI on every PR, deploy to the server over SSH after CI</span></div>
-        <div class="arch__box"><b>Filebeat → Elasticsearch → Kibana</b><span lang="ru">логи, ошибки — в Telegram</span><span lang="en">logs, errors go to Telegram</span></div>
+        <div class="arch__box"><b>GitHub Actions</b><span lang="ru">проверки на каждый PR, затем деплой по SSH</span><span lang="en">checks on every PR, then deploy over SSH</span></div>
+        <div class="arch__box"><b>Filebeat → Elasticsearch → Kibana</b><span lang="ru">логи; алерты об ошибках — в Telegram</span><span lang="en">logs; error alerts go to Telegram</span></div>
       </div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="highlights">
-    <h2 class="section__title" id="highlights"><span lang="ru">Ключевые решения</span><span lang="en">Key decisions</span></h2>
+    <h2 class="section__title" id="highlights"><span lang="ru">Ключевые решения</span><span lang="en">Engineering highlights</span></h2>
     <div class="highlights">
       <article class="highlight">
         <div class="highlight__tag">AI</div>
-        <h3><span lang="ru">Автомодерация объявлений</span><span lang="en">Automatic listing moderation</span></h3>
-        <div lang="ru">
-          <p>Каждое новое или отредактированное объявление проверяет модель OpenAI: текст, соответствие выбранной категории, адекватность цены с учётом характеристик.</p>
-          <p>Проверка идёт в фоне, через очередь. Вердикт видно в админке, а спорные случаи уходят модератору в Telegram.</p>
-        </div>
-        <div lang="en">
-          <p>Every new or edited listing is checked by an OpenAI model: the text, whether it fits the chosen category, and whether the price makes sense given the attributes.</p>
-          <p>Screening runs in the background through a queue. The verdict shows up in the admin panel, and questionable cases go to a moderator in Telegram.</p>
-        </div>
+        <h3><span lang="ru">Объявления проверяет AI</span><span lang="en">AI screens every listing</span></h3>
+        <div lang="ru"><p>Каждое новое или отредактированное объявление проверяет модель OpenAI: текст, соответствие категории и адекватность цены с учётом характеристик. Проверка идёт в фоне через очередь, вердикт виден в админке, а спорные объявления уходят модератору в Telegram.</p></div>
+        <div lang="en"><p>Every new or edited listing is checked by an OpenAI model: the text, whether it fits the category, and whether the price makes sense given the attributes. Screening runs in the background through a queue, the verdict shows up in the admin panel, and borderline listings go to a moderator in Telegram.</p></div>
       </article>
       <article class="highlight">
         <div class="highlight__tag"><span lang="ru">Реальное время</span><span lang="en">Real time</span></div>
-        <h3><span lang="ru">Чат без потерянных сообщений</span><span lang="en">Chat that doesn’t lose messages</span></h3>
-        <div lang="ru">
-          <p>Сообщения приходят через Mercure (SSE). У каждого диалога свой топик, подписаться на него могут только участники. Сделку фиксируют прямо в диалоге.</p>
-          <p>После переподключения клиент догружает пропущенное по курсору id, поэтому обрыв сети не теряет сообщения.</p>
-        </div>
-        <div lang="en">
-          <p>Messages arrive over Mercure (SSE). Each conversation has its own topic, and only its participants can subscribe. The deal is closed right in the conversation.</p>
-          <p>After a reconnect the client catches up from an id cursor, so a dropped connection never loses messages.</p>
-        </div>
+        <h3><span lang="ru">Пропущенные сообщения догружаются</span><span lang="en">Missed messages catch up</span></h3>
+        <div lang="ru"><p>Сообщения доставляются через Mercure (SSE): у каждого диалога свой топик, подписаться на него могут только участники. Сообщения хранятся в PostgreSQL, и после переподключения клиент догружает пропущенное по курсору id.</p></div>
+        <div lang="en"><p>Messages are delivered over Mercure (SSE): each conversation has its own topic, and only its participants can subscribe. Messages are stored in PostgreSQL, and after a reconnect the client catches up from an id cursor.</p></div>
       </article>
       <article class="highlight">
         <div class="highlight__tag"><span lang="ru">Каталог</span><span lang="en">Catalog</span></div>
-        <h3><span lang="ru">Свои характеристики у каждой категории</span><span lang="en">Attributes per category</span></h3>
-        <div lang="ru">
-          <p>У транспорта — пробег и год, у услуг — формат и опыт. Характеристики задаются для категории и подкатегории и наследуются.</p>
-          <p>Из них же строятся форма объявления, фильтры каталога и подсказки для AI-проверки.</p>
-        </div>
-        <div lang="en">
-          <p>Vehicles have mileage and year, services have format and experience. Attributes are defined per category and subcategory and inherited.</p>
-          <p>The same attributes drive the listing form, the catalog filters and the hints for AI screening.</p>
-        </div>
+        <h3><span lang="ru">У каждой категории свои характеристики</span><span lang="en">Each category has its own attributes</span></h3>
+        <div lang="ru"><p>У транспорта — пробег и год, у услуг — формат и опыт. Подкатегория наследует характеристики родительской категории. Из них строятся форма объявления, фильтры каталога и подсказки для AI-проверки.</p></div>
+        <div lang="en"><p>Vehicles have mileage and year, services have format and experience. A subcategory inherits its parent’s attributes. They drive the listing form, the catalog filters and the hints for AI screening.</p></div>
       </article>
       <article class="highlight">
         <div class="highlight__tag"><span lang="ru">Наблюдаемость</span><span lang="en">Observability</span></div>
-        <h3><span lang="ru">Один запрос — одна нить в логах</span><span lang="en">One request, one thread in the logs</span></h3>
-        <div lang="ru">
-          <p>Логи пишутся в JSON с контекстом: request_id, пользователь, URL, IP. Filebeat отправляет их в Elasticsearch.</p>
-          <p>В Kibana любую ошибку 5xx можно найти по request_id вместе с полным стектрейсом, а бот сразу сообщает о сбоях в Telegram.</p>
-        </div>
-        <div lang="en">
-          <p>Logs are JSON with context: request_id, user, URL and IP. Filebeat ships them to Elasticsearch.</p>
-          <p>In Kibana any 5xx can be found by request_id together with its full stack trace, and a bot reports failures to Telegram right away.</p>
-        </div>
+        <h3><span lang="ru">Любой запрос находится по request_id</span><span lang="en">Any request is traceable by its ID</span></h3>
+        <div lang="ru"><p>Логи пишутся в JSON с контекстом: request_id, пользователь, URL, IP. Filebeat отправляет их в Elasticsearch, и в Kibana любую ошибку 5xx можно найти вместе с полным стектрейсом. О сбоях бот сразу сообщает в Telegram.</p></div>
+        <div lang="en"><p>Logs are JSON with context: request_id, user, URL and IP. Filebeat ships them to Elasticsearch, and in Kibana any 5xx can be found together with its full stack trace. A bot reports failures to Telegram right away.</p></div>
       </article>
     </div>
   </section>
 
   <section class="section prose" aria-labelledby="did">
-    <h2 class="section__title" id="did"><span lang="ru">Что я сделал</span><span lang="en">What I built</span></h2>
+    <h2 class="section__title" id="did"><span lang="ru">Что я сделал</span><span lang="en">What I did</span></h2>
     <ul class="list" lang="ru">
-      <li><b>Руководство:</b> руководил разработкой, отвечал за серверную часть, помогал начинающему frontend-разработчику: архитектура, ревью, разбор задач.</li>
-      <li><b>Аккаунты:</b> stateless JWT с refresh-токенами, регистрация с подтверждением email, сброс пароля, вход через Google, ограничение частоты запросов.</li>
-      <li><b>Объявления:</b> дерево категорий с характеристиками, фото в Cloudflare R2, каталог с фильтрами и сортировкой, поиск, избранное, жалобы.</li>
-      <li><b>Модерация:</b> AI-проверка, модератор в Telegram, повторная модерация после правок.</li>
-      <li><b>Чат и сделки:</b> переписка в реальном времени, фиксация сделки в диалоге, жалобы на диалоги.</li>
-      <li><b>Админка:</b> пользователи с блокировкой, объявления, диалоги, журнал аудита, метрики.</li>
-      <li><b>Инфраструктура:</b> AWS, Docker Compose, Caddy с автоматическим TLS, логи в Elasticsearch и Kibana, алерты об ошибках в Telegram, CI/CD на GitHub Actions.</li>
+      <li><b>Роль:</b> вёл разработку, отвечал за backend и архитектуру, ставил задачи и ревьюил код начинающего frontend-разработчика.</li>
+      <li><b>Аккаунты:</b> JWT с refresh-токенами, подтверждение email, сброс пароля, вход через Google, ограничение частоты запросов.</li>
+      <li><b>Объявления:</b> фото в Cloudflare R2, поиск и сортировка, избранное, жалобы на объявления и диалоги.</li>
+      <li><b>Админка:</b> управление пользователями и блокировка, объявления, диалоги, журнал аудита, метрики.</li>
     </ul>
     <ul class="list" lang="en">
-      <li><b>Leadership:</b> led development, owned the backend, mentored a junior frontend developer: architecture, reviews, task breakdown.</li>
-      <li><b>Accounts:</b> stateless JWT with refresh tokens, sign-up with email verification, password reset, Google sign-in, rate limiting.</li>
-      <li><b>Listings:</b> a category tree with attributes, photos in Cloudflare R2, a catalog with filters and sorting, search, favorites, reports.</li>
-      <li><b>Moderation:</b> AI screening, a moderator in Telegram, re-moderation after edits.</li>
-      <li><b>Chat and deals:</b> real-time messaging, closing the deal in the conversation, conversation reports.</li>
-      <li><b>Admin panel:</b> users with suspension, listings, conversations, an audit log, metrics.</li>
-      <li><b>Infrastructure:</b> AWS, Docker Compose, Caddy with automatic TLS, logs in Elasticsearch and Kibana, Telegram error alerts, CI/CD on GitHub Actions.</li>
+      <li><b>Role:</b> led development, owned the backend and architecture, set tasks and reviewed the code of a junior frontend developer.</li>
+      <li><b>Accounts:</b> JWT with refresh tokens, email verification, password reset, Google sign-in, rate limiting.</li>
+      <li><b>Listings:</b> photos in Cloudflare R2, search and sorting, favorites, reports on listings and conversations.</li>
+      <li><b>Admin panel:</b> user management and suspension, listings, conversations, audit log, metrics.</li>
     </ul>
   </section>
 </main>
@@ -254,7 +210,7 @@
 <footer class="footer">
   <div class="wrap wrap--wide footer__inner">
     <span><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span> · <a href="mailto:taskaev.ivan@gmail.com">taskaev.ivan@gmail.com</a></span>
-    <a href="../layer/"><span lang="ru">Другой кейс: Layer →</span><span lang="en">Other case: Layer →</span></a>
+    <a href="../layer/"><span lang="ru">Следующий кейс: Layer →</span><span lang="en">Next case study: Layer →</span></a>
   </div>
 </footer>
 
