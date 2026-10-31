@@ -542,7 +542,7 @@ html { scrollbar-color: color-mix(in srgb, var(--slate) 55%, transparent) transp
     --bg: #fff; --surface: #fff; --surface-2: #e8ecea; --ink: #1e231f; --ink-2: #33372f;
     --muted: #5a5d55; --hair: #d2d9d7; --accent: #46606a; --accent-soft: #d6e1e3; --shadow: none; --shadow-lg: none;
   }
-  html { font-size: 8.5pt; }
+  html { font-size: 8.5pt; scrollbar-gutter: auto; }
   body { background: #fff; font-size: 9.2pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .topbar, .footer, .no-print, .hero__actions, .project__thumb, .project__more { display: none !important; }
   .print-only { display: revert !important; }
