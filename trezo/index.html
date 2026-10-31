@@ -102,7 +102,7 @@
   </section>
 
   <section class="section prose" aria-labelledby="context">
-    <h2 class="section__title" id="context"><span lang="ru">Задача</span><span lang="en">The problem</span></h2>
+    <h2 class="section__title" id="context"><span lang="ru">О проекте</span><span lang="en">About the project</span></h2>
     <div lang="ru">
       <p>
         Trezo — площадка объявлений: люди продают вещи и предлагают услуги, покупатели ищут по категориям
@@ -174,33 +174,33 @@
   </section>
 
   <section class="section" aria-labelledby="numbers">
-    <h2 class="section__title" id="numbers"><span lang="ru">В цифрах</span><span lang="en">By the numbers</span></h2>
+    <h2 class="section__title" id="numbers"><span lang="ru">Коротко</span><span lang="en">At a glance</span></h2>
     <div class="stats">
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Экраны дизайна</span><span lang="en">Designed screens</span></div>
+        <div class="stat__value">14</div>
+        <div class="stat__context"><span lang="ru">перенесены в Next.js пиксель в пиксель</span><span lang="en">built in Next.js pixel-perfect</span></div>
+      </div>
       <div class="stat">
         <div class="stat__label"><span lang="ru">Модули бэкенда</span><span lang="en">Backend modules</span></div>
         <div class="stat__value">13</div>
-        <div class="stat__context"><span lang="ru">плюс общий слой; внутри Domain, Application, Infrastructure, Presentation</span><span lang="en">plus a shared kernel; each split into Domain, Application, Infrastructure, Presentation</span></div>
+        <div class="stat__context"><span lang="ru">объявления, чат, модерация, аккаунты и другие</span><span lang="en">listings, chat, moderation, accounts and more</span></div>
       </div>
       <div class="stat">
-        <div class="stat__label"><span lang="ru">Спецификации поведения</span><span lang="en">Behavior specs</span></div>
-        <div class="stat__value">44</div>
-        <div class="stat__context"><span lang="ru">OpenSpec, 70 завершённых изменений</span><span lang="en">OpenSpec, 70 completed changes</span></div>
+        <div class="stat__label"><span lang="ru">Языки интерфейса</span><span lang="en">Interface languages</span></div>
+        <div class="stat__value">2</div>
+        <div class="stat__context"><span lang="ru">русский и английский, включая ошибки API</span><span lang="en">Russian and English, API errors included</span></div>
       </div>
       <div class="stat">
         <div class="stat__label"><span lang="ru">Тестовые файлы</span><span lang="en">Test files</span></div>
-        <div class="stat__value">104</div>
-        <div class="stat__context"><span lang="ru">PHPUnit и Playwright</span><span lang="en">PHPUnit and Playwright</span></div>
-      </div>
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Мои коммиты</span><span lang="en">My commits</span></div>
-        <div class="stat__value">73 / 80</div>
-        <div class="stat__context"><span lang="ru">за 7 недель разработки</span><span lang="en">over 7 weeks of development</span></div>
+        <div class="stat__value">100+</div>
+        <div class="stat__context"><span lang="ru">PHPUnit и Playwright в CI</span><span lang="en">PHPUnit and Playwright in CI</span></div>
       </div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="arch">
-    <h2 class="section__title" id="arch"><span lang="ru">Как устроено</span><span lang="en">Architecture</span></h2>
+    <h2 class="section__title" id="arch"><span lang="ru">Архитектура</span><span lang="en">Architecture</span></h2>
     <div class="arch">
       <div class="arch__col">
         <div class="arch__title"><span lang="ru">Клиент</span><span lang="en">Client</span></div>
@@ -228,7 +228,7 @@
   </section>
 
   <section class="section" aria-labelledby="highlights">
-    <h2 class="section__title" id="highlights"><span lang="ru">Интересные задачи</span><span lang="en">Engineering highlights</span></h2>
+    <h2 class="section__title" id="highlights"><span lang="ru">Ключевые решения</span><span lang="en">Key decisions</span></h2>
     <div class="highlights">
       <article class="highlight">
         <div class="highlight__tag">AI</div>
@@ -267,15 +267,15 @@
         </div>
       </article>
       <article class="highlight">
-        <div class="highlight__tag">Spec-driven</div>
-        <h3><span lang="ru">Разработка с AI-агентами</span><span lang="en">Development with AI agents</span></h3>
+        <div class="highlight__tag"><span lang="ru">Наблюдаемость</span><span lang="en">Observability</span></div>
+        <h3><span lang="ru">Один запрос — одна нить в логах</span><span lang="en">One request, one thread in the logs</span></h3>
         <div lang="ru">
-          <p>Задача сначала описывается спецификацией в OpenSpec: зачем, что меняется, как проверить. Агенты пишут код по правилам проекта.</p>
-          <p>Результат проходит CI (php-cs-fixer, PHPStan, PHPUnit, ESLint, tsc, Playwright) и отдельных агентов-ревьюеров по качеству и безопасности.</p>
+          <p>Логи пишутся в JSON с контекстом: request_id, пользователь, URL, IP. Filebeat отправляет их в Elasticsearch.</p>
+          <p>В Kibana любую ошибку 5xx можно найти по request_id вместе с полным стектрейсом, а бот сразу сообщает о сбоях в Telegram.</p>
         </div>
         <div lang="en">
-          <p>Every task starts as an OpenSpec spec: why, what changes, how to verify it. Agents write code following the project’s rules.</p>
-          <p>The result goes through CI (php-cs-fixer, PHPStan, PHPUnit, ESLint, tsc, Playwright) and separate reviewer agents for quality and security.</p>
+          <p>Logs are JSON with context: request_id, user, URL and IP. Filebeat ships them to Elasticsearch.</p>
+          <p>In Kibana any 5xx can be found by request_id together with its full stack trace, and a bot reports failures to Telegram right away.</p>
         </div>
       </article>
     </div>

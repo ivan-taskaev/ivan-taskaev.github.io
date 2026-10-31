@@ -101,7 +101,7 @@
   </section>
 
   <section class="section prose" aria-labelledby="context">
-    <h2 class="section__title" id="context"><span lang="ru">Задача</span><span lang="en">The problem</span></h2>
+    <h2 class="section__title" id="context"><span lang="ru">О проекте</span><span lang="en">About the project</span></h2>
     <div lang="ru">
       <p>
         Layer продаёт звуки для создания музыки: паки сэмплов и лупов от авторов. Покупатель
@@ -178,33 +178,33 @@
   </section>
 
   <section class="section" aria-labelledby="numbers">
-    <h2 class="section__title" id="numbers"><span lang="ru">В цифрах</span><span lang="en">By the numbers</span></h2>
+    <h2 class="section__title" id="numbers"><span lang="ru">Коротко</span><span lang="en">At a glance</span></h2>
     <div class="stats">
       <div class="stat">
         <div class="stat__label"><span lang="ru">Приложения</span><span lang="en">Apps</span></div>
         <div class="stat__value">5</div>
-        <div class="stat__context"><span lang="ru">API, бот, загрузчик, Mini App, админка</span><span lang="en">API, bot, uploader, Mini App, admin</span></div>
+        <div class="stat__context"><span lang="ru">сайт и Mini App, кабинет авторов, API, бот, загрузчик</span><span lang="en">website &amp; Mini App, author portal, API, bot, uploader</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label"><span lang="ru">Платформы</span><span lang="en">Platforms</span></div>
+        <div class="stat__value">2</div>
+        <div class="stat__context"><span lang="ru">сайт и Telegram Mini App</span><span lang="en">website and Telegram Mini App</span></div>
       </div>
       <div class="stat">
         <div class="stat__label"><span lang="ru">Тестовые файлы</span><span lang="en">Test files</span></div>
-        <div class="stat__value">235</div>
-        <div class="stat__context">Go, Vitest, Playwright, pytest</div>
+        <div class="stat__value">230+</div>
+        <div class="stat__context"><span lang="ru">Go, Vitest, Playwright, pytest</span><span lang="en">Go, Vitest, Playwright, pytest</span></div>
       </div>
       <div class="stat">
-        <div class="stat__label"><span lang="ru">Спецификации поведения</span><span lang="en">Behavior specs</span></div>
-        <div class="stat__value">65</div>
-        <div class="stat__context"><span lang="ru">OpenSpec, 52 завершённых изменения</span><span lang="en">OpenSpec, 52 completed changes</span></div>
-      </div>
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Строки кода</span><span lang="en">Lines of code</span></div>
-        <div class="stat__value"><span lang="ru">≈68 тыс.</span><span lang="en">≈68K</span></div>
-        <div class="stat__context">Go, TypeScript, Python</div>
+        <div class="stat__label"><span lang="ru">Ширины экрана</span><span lang="en">Screen widths</span></div>
+        <div class="stat__value">6</div>
+        <div class="stat__context"><span lang="ru">визуальные тесты от 360 до 2560 px</span><span lang="en">visual tests from 360 to 2560 px</span></div>
       </div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="arch">
-    <h2 class="section__title" id="arch"><span lang="ru">Как устроено</span><span lang="en">Architecture</span></h2>
+    <h2 class="section__title" id="arch"><span lang="ru">Архитектура</span><span lang="en">Architecture</span></h2>
     <div class="arch">
       <div class="arch__col">
         <div class="arch__title"><span lang="ru">Клиенты</span><span lang="en">Clients</span></div>
@@ -225,7 +225,7 @@
       </div>
       <div class="arch__col">
         <div class="arch__title"><span lang="ru">Эксплуатация</span><span lang="en">Operations</span></div>
-        <div class="arch__box"><b>GitHub Actions → GHCR</b><span lang="ru">образы по SHA и digest</span><span lang="en">images pinned by SHA and digest</span></div>
+        <div class="arch__box"><b>GitHub Actions → GHCR</b><span lang="ru">проверки, сборка образов, деплой</span><span lang="en">checks, image builds, deploys</span></div>
         <div class="arch__box"><b>Docker Compose · Caddy</b><span>HTTPS</span></div>
         <div class="arch__box"><b><span lang="ru">Бэкап</span><span lang="en">Backups</span></b><span lang="ru">ночной, зашифрованный, с проверкой восстановления</span><span lang="en">nightly, encrypted, with restore checks</span></div>
       </div>
@@ -233,7 +233,7 @@
   </section>
 
   <section class="section" aria-labelledby="highlights">
-    <h2 class="section__title" id="highlights"><span lang="ru">Интересные задачи</span><span lang="en">Engineering highlights</span></h2>
+    <h2 class="section__title" id="highlights"><span lang="ru">Ключевые решения</span><span lang="en">Key decisions</span></h2>
     <div class="highlights">
       <article class="highlight">
         <div class="highlight__tag"><span lang="ru">Безопасность</span><span lang="en">Security</span></div>
@@ -275,12 +275,12 @@
         <div class="highlight__tag"><span lang="ru">Релизы</span><span lang="en">Releases</span></div>
         <h3><span lang="ru">В прод — только проверенный код</span><span lang="en">Only verified code ships</span></h3>
         <div lang="ru">
-          <p>Деплой запускается по конкретному коммиту из <span class="mono">main</span>. Сначала все пять приложений проходят проверки, включая интеграционные тесты и Playwright. Образы собираются в CI и закрепляются по digest, секреты не попадают в артефакты GitHub.</p>
-          <p>Предыдущие релизы сохраняются, откат — тот же запуск со старым SHA.</p>
+          <p>Деплой запускается для конкретной версии из ветки <span class="mono">main</span>. Сначала все пять приложений проходят проверки, включая интеграционные тесты и Playwright. Образы собираются в CI и закрепляются по digest, секреты не попадают в артефакты GitHub.</p>
+          <p>Предыдущие релизы сохраняются, откат — тот же запуск с прежней версией.</p>
         </div>
         <div lang="en">
-          <p>Deploys run for a specific commit on <span class="mono">main</span>. All five apps must pass their checks first, including integration tests and Playwright. Images are built in CI and pinned by digest, and secrets never end up in GitHub artifacts.</p>
-          <p>Previous releases are kept; a rollback is the same run with an older SHA.</p>
+          <p>Deploys run for a specific version from the <span class="mono">main</span> branch. All five apps must pass their checks first, including integration tests and Playwright. Images are built in CI and pinned by digest, and secrets never end up in GitHub artifacts.</p>
+          <p>Previous releases are kept; a rollback is the same run with an earlier version.</p>
         </div>
       </article>
     </div>
@@ -304,18 +304,6 @@
       <li><b>Uploader:</b> safe file handling, previews, cover thumbnails, track analysis.</li>
       <li><b>Infrastructure:</b> S3 file storage, the server, HTTPS via Caddy, automated deployment (CI/CD), a staging stand for testers, nightly backups.</li>
     </ul>
-
-    <h3><span lang="ru">Как я работал</span><span lang="en">How I worked</span></h3>
-    <p lang="ru">
-      Каждое изменение начиналось со спецификации в OpenSpec: зачем оно нужно, что меняется, что затронет.
-      Затем задачи, тесты и код. Вёрстку Mini App сторожат визуальные тесты на шести ширинах экрана,
-      от 360 до 2560 px.
-    </p>
-    <p lang="en">
-      Every change started as an OpenSpec spec: why it is needed, what changes, what it affects.
-      Then tasks, tests and code. The Mini App layout is guarded by visual tests at six screen widths,
-      from 360 to 2560 px.
-    </p>
   </section>
 </main>
 
