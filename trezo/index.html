@@ -95,34 +95,6 @@
         <source src="../assets/video/trezo-demo.webm" type="video/webm">
       </video>
     </div>
-    <p class="video-note">
-      <span lang="ru">45 секунд по живому сайту: каталог, фильтры, поиск, объявление, тёмная тема, английская версия. Имена продавцов размыты.</span>
-      <span lang="en">45 seconds on the live site: catalog, filters, search, a listing, dark theme, English version. Seller names are blurred.</span>
-    </p>
-  </section>
-
-  <section class="section prose" aria-labelledby="context">
-    <h2 class="section__title" id="context"><span lang="ru">О проекте</span><span lang="en">About the project</span></h2>
-    <div lang="ru">
-      <p>
-        Trezo — площадка объявлений: люди продают вещи и предлагают услуги, покупатели ищут по категориям
-        и характеристикам и договариваются в чате. Был готовый дизайн 14 экранов, кода не было.
-      </p>
-      <p>
-        Нужно было с нуля построить API, вместе с frontend-разработчиком перенести дизайн в продакшен
-        и выстроить модерацию так, чтобы объявления проверялись быстро и без ручного разбора каждого.
-      </p>
-    </div>
-    <div lang="en">
-      <p>
-        Trezo is a classifieds site: people sell things and offer services, buyers search by category
-        and attributes and agree on a deal in chat. There was a finished design of 14 screens and no code.
-      </p>
-      <p>
-        The job was to build the API from scratch, ship the design to production together with
-        the frontend developer, and set up moderation so listings get checked quickly without reviewing each one by hand.
-      </p>
-    </div>
   </section>
 
   <section class="section" aria-labelledby="screens">
@@ -173,32 +145,6 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="numbers">
-    <h2 class="section__title" id="numbers"><span lang="ru">Коротко</span><span lang="en">At a glance</span></h2>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Экраны дизайна</span><span lang="en">Designed screens</span></div>
-        <div class="stat__value">14</div>
-        <div class="stat__context"><span lang="ru">перенесены в Next.js пиксель в пиксель</span><span lang="en">built in Next.js pixel-perfect</span></div>
-      </div>
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Модули бэкенда</span><span lang="en">Backend modules</span></div>
-        <div class="stat__value">13</div>
-        <div class="stat__context"><span lang="ru">объявления, чат, модерация, аккаунты и другие</span><span lang="en">listings, chat, moderation, accounts and more</span></div>
-      </div>
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Языки интерфейса</span><span lang="en">Interface languages</span></div>
-        <div class="stat__value">2</div>
-        <div class="stat__context"><span lang="ru">русский и английский, включая ошибки API</span><span lang="en">Russian and English, API errors included</span></div>
-      </div>
-      <div class="stat">
-        <div class="stat__label"><span lang="ru">Тестовые файлы</span><span lang="en">Test files</span></div>
-        <div class="stat__value">100+</div>
-        <div class="stat__context"><span lang="ru">PHPUnit и Playwright в CI</span><span lang="en">PHPUnit and Playwright in CI</span></div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" aria-labelledby="arch">
     <h2 class="section__title" id="arch"><span lang="ru">Архитектура</span><span lang="en">Architecture</span></h2>
     <div class="arch">
@@ -219,10 +165,11 @@
         <div class="arch__box"><b>OpenAI · Telegram</b><span lang="ru">AI-проверка и уведомления модераторам</span><span lang="en">AI screening and moderator alerts</span></div>
       </div>
       <div class="arch__col">
-        <div class="arch__title"><span lang="ru">Эксплуатация</span><span lang="en">Operations</span></div>
-        <div class="arch__box"><b>AWS · Docker Compose · Caddy</b><span>HTTPS</span></div>
-        <div class="arch__box"><b>Filebeat → Elasticsearch → Kibana</b><span lang="ru">JSON-логи с request_id</span><span lang="en">JSON logs with request_id</span></div>
-        <div class="arch__box"><b>GitHub Actions</b><span lang="ru">стиль, статанализ, тесты, сборка, деплой</span><span lang="en">style, static analysis, tests, build, deploy</span></div>
+        <div class="arch__title"><span lang="ru">Инфраструктура и CI/CD</span><span lang="en">Infrastructure &amp; CI/CD</span></div>
+        <div class="arch__box"><b>AWS EC2 · Docker Compose</b><span lang="ru">продакшен-сервер</span><span lang="en">production server</span></div>
+        <div class="arch__box"><b>Caddy</b><span lang="ru">HTTPS с автоматическими сертификатами</span><span lang="en">HTTPS with automatic certificates</span></div>
+        <div class="arch__box"><b>GitHub Actions</b><span lang="ru">CI на каждый PR, деплой на сервер по SSH после CI</span><span lang="en">CI on every PR, deploy to the server over SSH after CI</span></div>
+        <div class="arch__box"><b>Filebeat → Elasticsearch → Kibana</b><span lang="ru">логи, ошибки — в Telegram</span><span lang="en">logs, errors go to Telegram</span></div>
       </div>
     </div>
   </section>
@@ -235,11 +182,11 @@
         <h3><span lang="ru">Автомодерация объявлений</span><span lang="en">Automatic listing moderation</span></h3>
         <div lang="ru">
           <p>Каждое новое или отредактированное объявление проверяет модель OpenAI: текст, соответствие выбранной категории, адекватность цены с учётом характеристик.</p>
-          <p>Проверка идёт в фоне, через очередь. Вердикт видно в админке, а спорные случаи уходят модератору в Telegram. Если решение уже принято, устаревший вердикт не отправляется.</p>
+          <p>Проверка идёт в фоне, через очередь. Вердикт видно в админке, а спорные случаи уходят модератору в Telegram.</p>
         </div>
         <div lang="en">
           <p>Every new or edited listing is checked by an OpenAI model: the text, whether it fits the chosen category, and whether the price makes sense given the attributes.</p>
-          <p>Screening runs in the background through a queue. The verdict shows up in the admin panel, and questionable cases go to a moderator in Telegram. If a decision has already been made, a stale verdict is not sent.</p>
+          <p>Screening runs in the background through a queue. The verdict shows up in the admin panel, and questionable cases go to a moderator in Telegram.</p>
         </div>
       </article>
       <article class="highlight">
