@@ -6,6 +6,8 @@
   --surface: #ffffff;
   --surface-2: #f3f1ec;
   --chrome: #ecebe6;
+  --frame: #ffffff;
+  --dots: #d3d0c7;
   --ink: #151715;
   --ink-2: #34372f;
   --muted: #666a63;
@@ -22,6 +24,34 @@
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
   color-scheme: light;
+}
+
+/* ---------- Dark theme: "warm graphite", follows the system setting (screen only, print stays light) ---------- */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141513;
+    --surface: #1d1e1b;
+    --surface-2: #252622;
+    --chrome: #2b2c28;
+    --frame: #252622;
+    --dots: #45463f;
+    --ink: #f1eee7;
+    --ink-2: #d8d4ca;
+    --muted: #9c9a90;
+    --hair: #2f302b;
+    --accent: #93b4bc;
+    --warm: #c79a74;
+    --warm-text: #d0a57f;
+    --button: #f1eee7;
+    --button-ink: #141513;
+    --shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 34px 70px -36px rgba(0, 0, 0, 0.75);
+    color-scheme: dark;
+  }
+  .btn--primary:hover,
+  .project__more:hover { filter: brightness(0.9); }
+  .hero-art img { box-shadow: 0 44px 90px -34px rgba(0, 0, 0, 0.8); }
+  .lang-switch button[aria-pressed="true"] { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
 }
 
 /* ---------- Language switching ---------- */
@@ -106,7 +136,7 @@ figure { margin: 0; }
   left: 16px;
   width: 56px;
   height: 10px;
-  background: radial-gradient(circle, #d3d0c7 4px, transparent 5px) 0 0 / 19px 10px repeat-x;
+  background: radial-gradient(circle, var(--dots) 4px, transparent 5px) 0 0 / 19px 10px repeat-x;
 }
 
 /* ---------- Top bar ---------- */
@@ -291,7 +321,7 @@ main { counter-reset: section; }
   position: absolute;
   width: 62%;
   height: auto;
-  border: 6px solid #fff;
+  border: 6px solid var(--frame);
   border-radius: 14px;
   box-shadow: 0 44px 90px -34px rgba(21, 23, 21, 0.5);
 }
