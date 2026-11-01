@@ -31,6 +31,17 @@
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-set-lang') === lang));
     }
+    // Accessible names that live in attributes carry both languages as data-label-ru / data-label-en.
+    var labelled = document.querySelectorAll('[data-label-ru]');
+    for (var j = 0; j < labelled.length; j++) {
+      labelled[j].setAttribute('aria-label', labelled[j].getAttribute('data-label-' + lang));
+    }
+  }
+
+  function setLabel(el, ru, en) {
+    el.setAttribute('data-label-ru', ru);
+    el.setAttribute('data-label-en', en);
+    el.setAttribute('aria-label', root.getAttribute('data-lang') === 'en' ? en : ru);
   }
 
   function switchLang(lang) {
@@ -105,7 +116,8 @@
     var dialog = document.createElement('dialog');
     if (typeof dialog.showModal !== 'function') return null;
     dialog.className = 'lightbox';
-    dialog.innerHTML = '<button type="button" class="lightbox__close" aria-label="Close">×</button><img alt=""><p></p>';
+    dialog.innerHTML = '<button type="button" class="lightbox__close">×</button><img alt=""><p></p>';
+    setLabel(dialog.querySelector('.lightbox__close'), 'Закрыть', 'Close');
     document.body.appendChild(dialog);
     var img = dialog.querySelector('img');
     var text = dialog.querySelector('p');
@@ -122,7 +134,8 @@
     };
   }
 
-  // A large play button over each demo video, hidden once playback starts.
+  // A large play button over each demo video; the native controls appear once playback starts
+  // (without JS the video keeps its controls attribute).
   function addPlayButtons() {
     var videos = document.querySelectorAll('.video video');
     for (var i = 0; i < videos.length; i++) {
@@ -130,10 +143,14 @@
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'video__play';
-        button.setAttribute('aria-label', 'Play');
+        setLabel(button, 'Воспроизвести', 'Play');
         button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.8v14.4L19 12z" fill="currentColor"/></svg>';
         button.addEventListener('click', function () { video.play(); });
-        video.addEventListener('play', function () { button.hidden = true; });
+        video.controls = false;
+        video.addEventListener('play', function () {
+          button.hidden = true;
+          video.controls = true;
+        });
         video.parentNode.appendChild(button);
       })(videos[i]);
     }

@@ -21,6 +21,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4.6 3.1 11.5c-.8.3-.7 1.4.1 1.6l4.4 1.3 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3-13.6c.2-.9-.7-1.6-1.6-1.3Z"/><path d="m7.6 14.4 9.6-6.5-6.8 7.4"/></symbol>
 </svg>
 
 <header class="topbar">
@@ -40,7 +41,7 @@
         <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
       <details class="pdf-menu pdf-menu--right">
-        <summary class="btn btn--small btn--primary"><svg class="icon"><use href="#i-download"/></svg>PDF<svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
+        <summary class="btn btn--small"><svg class="icon"><use href="#i-download"/></svg>PDF<svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
         <div class="pdf-menu__list">
           <div class="pdf-menu__label"><span lang="ru">Язык резюме</span><span lang="en">Resume language</span></div>
           <a href="../assets/cv/ivan-taskaev-cv-ru.pdf" download>Русский<span>RU</span></a>
@@ -86,10 +87,9 @@
     </ul>
   </section>
 
-  <section class="section" aria-labelledby="video">
-    <h2 class="section__title" id="video"><span lang="ru">Демо</span><span lang="en">Demo</span></h2>
+  <section class="section section--video" data-label-ru="Демо" data-label-en="Demo" aria-label="Демо">
     <div class="video" style="view-transition-name: layer-cover">
-      <video controls muted playsinline preload="metadata" poster="../assets/img/layer/home.webp">
+      <video controls muted playsinline preload="metadata" width="1920" height="1200" poster="../assets/img/layer/player.webp">
         <source src="../assets/video/layer-demo.webm" type="video/webm">
       </video>
     </div>
@@ -100,42 +100,42 @@
     <div class="gallery">
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/home.webp" width="1920" height="1080" decoding="async" alt="Главная Layer с популярными паками">
+          <img src="../assets/img/layer/home.webp" width="1920" height="1200" decoding="async" alt="Главная Layer с популярными паками">
           <div class="placeholder"><b>home.webp</b></div>
         </div>
         <figcaption><span lang="ru">Главная: популярные паки</span><span lang="en">Home: popular packs</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/player.webp" width="1920" height="1080" decoding="async" alt="Страница пака с играющим сэмплом и плеером">
+          <img src="../assets/img/layer/player.webp" width="1920" height="1200" decoding="async" alt="Страница пака с играющим сэмплом и плеером">
           <div class="placeholder"><b>player.webp</b></div>
         </div>
         <figcaption><span lang="ru">Страница пака и плеер</span><span lang="en">Pack page and player</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/samples.webp" width="1920" height="1080" decoding="async" alt="Каталог сэмплов с BPM, тональностью и длительностью">
+          <img src="../assets/img/layer/samples.webp" width="1920" height="1200" decoding="async" alt="Каталог сэмплов с BPM, тональностью и длительностью">
           <div class="placeholder"><b>samples.webp</b></div>
         </div>
         <figcaption><span lang="ru">Каталог сэмплов: BPM, тональность, длительность</span><span lang="en">Sample catalog: BPM, key, length</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/filters.webp" width="1920" height="1080" decoding="async" alt="Фильтры: тип, жанр, стиль, тональность, BPM">
+          <img src="../assets/img/layer/filters.webp" width="1920" height="1200" decoding="async" alt="Фильтры: тип, жанр, стиль, тональность, BPM">
           <div class="placeholder"><b>filters.webp</b></div>
         </div>
         <figcaption><span lang="ru">Фильтры: тип, жанр, стиль, тональность, BPM</span><span lang="en">Filters: type, genre, style, key, BPM</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/packs.webp" width="1920" height="1080" decoding="async" alt="Каталог паков">
+          <img src="../assets/img/layer/packs.webp" width="1920" height="1200" decoding="async" alt="Каталог паков">
           <div class="placeholder"><b>packs.webp</b></div>
         </div>
         <figcaption><span lang="ru">Паки от разных авторов</span><span lang="en">Packs from different authors</span></figcaption>
       </figure>
       <figure class="shot">
         <div class="shot__frame">
-          <img src="../assets/img/layer/subscribe.webp" width="1920" height="1080" decoding="async" alt="Тарифы с кредитами">
+          <img src="../assets/img/layer/subscribe.webp" width="1920" height="1200" decoding="async" alt="Тарифы с кредитами">
           <div class="placeholder"><b>subscribe.webp</b></div>
         </div>
         <figcaption><span lang="ru">Тарифы: кредиты не сгорают</span><span lang="en">Plans: unused credits roll over</span></figcaption>
@@ -198,24 +198,44 @@
   <section class="section prose" aria-labelledby="did">
     <h2 class="section__title" id="did"><span lang="ru">Что я сделал</span><span lang="en">What I built</span></h2>
     <ul class="list" lang="ru">
-      <li><b>Сайт и Mini App для покупателей:</b> каталог паков и сэмплов, поиск и фильтры, избранное, библиотека покупок, плеер, вход через Telegram.</li>
-      <li><b>Кабинет авторов и админка:</b> загрузка паков, модерация, жанры и стили, тарифы, роли сотрудников.</li>
-      <li><b>Платежи:</b> оплата тарифов через YooKassa, кредиты не сгорают, история начислений.</li>
-      <li><b>Telegram-бот:</b> меню и запуск Mini App.</li>
+      <li><b>Сайт и Mini App для покупателей.</b> Каталог паков и сэмплов, поиск и фильтры, избранное, библиотека покупок, плеер, вход через Telegram.</li>
+      <li><b>Кабинет авторов и админка.</b> Загрузка паков, модерация, жанры и стили, тарифы, роли сотрудников.</li>
+      <li><b>Платежи.</b> Оплата тарифов через YooKassa, кредиты не сгорают, история начислений.</li>
+      <li><b>Telegram-бот.</b> Меню и запуск Mini App.</li>
     </ul>
     <ul class="list" lang="en">
-      <li><b>Website and Mini App for buyers:</b> catalog of packs and samples, search and filters, favorites, purchase library, player, sign-in with Telegram.</li>
-      <li><b>Author portal and admin panel:</b> pack upload, moderation, genres and styles, plans, staff roles.</li>
-      <li><b>Payments:</b> plan payments via YooKassa, unused credits roll over, credit history.</li>
-      <li><b>Telegram bot:</b> menu and Mini App launch.</li>
+      <li><b>Website and Mini App for buyers.</b> Catalog of packs and samples, search and filters, favorites, purchase library, player, sign-in with Telegram.</li>
+      <li><b>Author portal and admin panel.</b> Pack upload, moderation, genres and styles, plans, staff roles.</li>
+      <li><b>Payments.</b> Plan payments via YooKassa, unused credits roll over, credit history.</li>
+      <li><b>Telegram bot.</b> Menu and Mini App launch.</li>
     </ul>
+  </section>
+  <section class="next">
+    <a class="next__link" href="../trezo/">
+      <span class="next__text">
+        <span class="next__label"><span lang="ru">Следующий кейс</span><span lang="en">Next case study</span></span>
+        <span class="next__title">Trezo →</span>
+      </span>
+      <img class="next__thumb" src="../assets/img/trezo/home.webp" alt="" width="1920" height="1200" loading="lazy">
+    </a>
+    <div class="next__actions">
+      <a class="btn btn--primary" href="https://t.me/ivan_taskaev" target="_blank" rel="noopener"><svg class="icon"><use href="#i-telegram"/></svg><span lang="ru">Написать в Telegram</span><span lang="en">Message on Telegram</span></a>
+      <details class="pdf-menu pdf-menu--right">
+        <summary class="btn"><svg class="icon"><use href="#i-download"/></svg><span lang="ru">Резюме PDF</span><span lang="en">Resume PDF</span><svg class="icon pdf-menu__chevron"><use href="#i-chevron"/></svg></summary>
+        <div class="pdf-menu__list">
+          <div class="pdf-menu__label"><span lang="ru">Язык резюме</span><span lang="en">Resume language</span></div>
+          <a href="../assets/cv/ivan-taskaev-cv-ru.pdf" download>Русский<span>RU</span></a>
+          <a href="../assets/cv/ivan-taskaev-cv-en.pdf" download>English<span>EN</span></a>
+        </div>
+      </details>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="wrap wrap--wide footer__inner">
     <span><span lang="ru">Иван Таскаев</span><span lang="en">Ivan Taskaev</span> · <a href="mailto:taskaev.ivan@gmail.com">taskaev.ivan@gmail.com</a></span>
-    <a href="../trezo/"><span lang="ru">Следующий кейс: Trezo →</span><span lang="en">Next case study: Trezo →</span></a>
+    <span><a href="https://t.me/ivan_taskaev" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.linkedin.com/in/ivan-taskaev-aa35792bb" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/tlastione" target="_blank" rel="noopener">GitHub</a></span>
   </div>
 </footer>
 
