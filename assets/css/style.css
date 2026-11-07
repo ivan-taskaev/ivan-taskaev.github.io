@@ -630,7 +630,7 @@ html { scrollbar-color: color-mix(in srgb, var(--warm) 50%, transparent) transpa
 }
 
 /* ---------- Print: the resume page becomes a one-page A4 CV ---------- */
-@page { size: A4; margin: 11mm 12mm; }
+@page { size: A4; margin: 9.5mm 12mm; }
 
 @media print {
   :root {
@@ -638,7 +638,7 @@ html { scrollbar-color: color-mix(in srgb, var(--warm) 50%, transparent) transpa
     --muted: #5d615a; --hair: #dcd9d1; --accent: #46606a; --shadow: none; --shadow-lg: none;
   }
   html { font-size: 8.5pt; scrollbar-gutter: auto; }
-  body { background: #fff; font-size: 8.9pt; line-height: 1.37; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: #fff; font-size: 8.9pt; line-height: 1.31; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .topbar, .footer, .next, .no-print, .hero__actions, .hero-art, .project__thumb, .project__more { display: none !important; }
   .print-only { display: revert !important; }
   .wrap { width: 100%; }
